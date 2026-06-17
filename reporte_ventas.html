@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporte de Ventas — Q1 2024</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #F0F4F8;
+      color: #1A2B3C;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: #1A2B3C;
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #90A4B8;
+      margin-top: 4px;
+    }
+
+    .badge {
+      background: #2ECC71;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px 20px;
+      border-top: 3px solid #2ECC71;
+    }
+
+    .kpi-card .label {
+      font-size: 0.75rem;
+      color: #6B7E8F;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1A2B3C;
+      line-height: 1;
+    }
+
+    .kpi-card .sub {
+      font-size: 0.8rem;
+      color: #2ECC71;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* Table */
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1A2B3C;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #E8EDF2;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: #6B7E8F;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      background: #F7F9FB;
+      border-radius: 4px;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #F0F4F8;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody td {
+      padding: 12px 12px;
+      color: #1A2B3C;
+    }
+
+    .bar-cell {
+      width: 180px;
+    }
+
+    .bar-bg {
+      background: #E8EDF2;
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      background: #2ECC71;
+      height: 8px;
+      border-radius: 4px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status.ok    { background: #E8F8F0; color: #1E8449; }
+    .status.warn  { background: #FEF9E7; color: #B7950B; }
+    .status.low   { background: #FDEDEC; color: #C0392B; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #90A4B8;
+      padding: 8px 0 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <h1>Reporte de Ventas</h1>
+        <p>Primer Trimestre 2024 · Región Latinoamérica</p>
+      </div>
+      <span class="badge">Q1 2024</span>
+    </header>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="label">Ingresos Totales</div>
+        <div class="value">S/ 84,320</div>
+        <div class="sub">↑ 12% vs Q4 2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">Unidades Vendidas</div>
+        <div class="value">1,240</div>
+        <div class="sub">↑ 8% vs Q4 2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">Ticket Promedio</div>
+        <div class="value">S/ 68</div>
+        <div class="sub">↑ 4% vs Q4 2023</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Ventas por Producto</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Unidades</th>
+            <th>Ingreso (S/)</th>
+            <th>Participación</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop ProData X1</td>
+            <td>320</td>
+            <td>38,400</td>
+            <td class="bar-cell">
+              <div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div>
+            </td>
+            <td><span class="status ok">Óptimo</span></td>
+          </tr>
+          <tr>
+            <td>Monitor UltraView 27"</td>
+            <td>280</td>
+            <td>22,400</td>
+            <td class="bar-cell">
+              <div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div>
+            </td>
+            <td><span class="status ok">Óptimo</span></td>
+          </tr>
+          <tr>
+            <td>Teclado MechPro</td>
+            <td>410</td>
+            <td>16,400</td>
+            <td class="bar-cell">
+              <div class="bar-bg"><div class="bar-fill" style="width:55%"></div></div>
+            </td>
+            <td><span class="status warn">Regular</span></td>
+          </tr>
+          <tr>
+            <td>Mouse Ergonómico</td>
+            <td>180</td>
+            <td>5,400</td>
+            <td class="bar-cell">
+              <div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div>
+            </td>
+            <td><span class="status warn">Regular</span></td>
+          </tr>
+          <tr>
+            <td>Hub USB-C 7 puertos</td>
+            <td>50</td>
+            <td>1,720</td>
+            <td class="bar-cell">
+              <div class="bar-bg"><div class="bar-fill" style="width:12%"></div></div>
+            </td>
+            <td><span class="status low">Bajo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      Generado para el Programa de Especialización en Ingeniería de Datos · URP · IDIA
+    </footer>
+
+  </div>
+</body>
+</html>
